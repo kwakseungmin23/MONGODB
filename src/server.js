@@ -22,7 +22,7 @@ const server = async () => {
     app.use("/blog", blogRouter);
 
     app.listen(PORT, async () => {
-      console.log(`server listening on port ${3000}`);
+      console.log(`server listening on port ${PORT}`);
 
       // await generateFakeData(5, 5, 5);
 
