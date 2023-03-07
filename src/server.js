@@ -10,6 +10,7 @@ const server = async () => {
   try {
     const { MONGO_URI } = process.env;
     if (!MONGO_URI) throw new Error("MONGO_URI is required.");
+    const { PORT } = process.env;
     await mongoose.connect(MONGO_URI);
     // mongoose.set("debug", true);
     console.log("MongoDB connected");
@@ -20,8 +21,8 @@ const server = async () => {
 
     app.use("/blog", blogRouter);
 
-    app.listen(3000, async () => {
-      console.log("server listening on port 3000");
+    app.listen(PORT, async () => {
+      console.log(`server listening on port ${3000}`);
 
       // await generateFakeData(5, 5, 5);
 
